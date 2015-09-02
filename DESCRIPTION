@@ -1,0 +1,11 @@
+Package: rsnippets
+Type: Package
+Title: Useful snippets of R code
+Version: 0.0.0.9000
+Date: 2015-09-02
+Authors@R: person("Amy", "Chan", email = "mathematical.coffee@gmail.com", role = c("aut", "cre"))
+Description: Just a collection of utility R snippets I use now and then, to keep them all in one place.
+  The idea is that each file (function, even) should be self-contained so it's easy for me to rip out just the functions I need.
+License: GPLv3
+Suggests: devtools
+LazyData: TRUE
