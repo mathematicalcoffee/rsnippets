@@ -23,8 +23,6 @@ messagef <- function (..., domain=NULL, appendLF=TRUE) {
 #' @param immediate. passed to `base::warning`; logical, indicating if the call should be output immediately, even if `getOption("warn") <= 0`
 #' @param noBreaks. passed to `base::warning`; logical, indicating as far as possible the message should be output as a single line when `options(warn=1)`.
 #' @param domain passed to `base::warning` See `base::gettext`. If `NA`, messages will not be translated, see also the note in `base::stop`.
-#' @details
-#'
 #' @seealso `base::sprintf`, `base::warning`
 #' @family message, warnings and errors.
 #' @examples
