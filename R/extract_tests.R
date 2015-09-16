@@ -1,7 +1,8 @@
 test.template <- '
-context("FUNCTION")
-test_that("FUNCTION works", {
-    # @TODO
+describe("FUNCTION", {
+    it("works", {
+       @TODO
+    })
 })
 '
 #' Generates skeleton testthat files for your R package
@@ -37,7 +38,9 @@ extract_tests <- function (pkg='.', quiet=FALSE) {
 
         # append to file if exists
         # try to be case insensitiive...
-        if (tolower(basename(test.path)) %in% tolower(list.files(file.path(pkg, 'tests/testthat')))) {
+        existing.files <- list.files(file.path(pkg, 'tests/testthat'))
+        if (!is.na(i <- match(tolower(basename(test.path)), tolower(existing.files)))) {
+            test.path <- file.path(pkg, 'tests/testthat', existing.files[i])
             cd <- paste(readLines(test.path), collapse='\n')
             # crude detection
             existing.tests <- tests.toadd[vapply(sprintf('(context|test_that)\\(["\'].*?\\b%s\\b', tests.toadd), grepl, FALSE, x=cd)]
